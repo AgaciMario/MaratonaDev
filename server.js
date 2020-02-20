@@ -20,12 +20,12 @@ const bd = new Pool({
 
 // configurando a template engine.
 const nunjucks = require("nunjucks");
-nunjucks.configure("./", { // ./ indica a do projeto.
-    express: server, // indicando qual variável guarda o express no projeto.
+nunjucks.configure("./", { // ./ indica que utilizaremos a pasta padrão do projeto.
+    express: server, // indicando qual variável guarda o express.
     noCache: true,
 })
 
-// configurar a apresentação da pagina.
+// configurar a apresentação da página.
 server.get("/", function(req, res){
     // req -> requisição, res -> resposta.as
     bd.query("SELECT * FROM donors", function(err, result){
@@ -55,9 +55,9 @@ server.post("/", function(req, res) {
     const values = [name, email, blood]
 
     bd.query(query, values, function(err) {
-        if(err) return res.send(err.message)
+        if(err) return res.send("Não foi possível realizar a operação. "+err.message)
 
-        // redireciona para a pagina inicial.
+        // redireciona para a página inicial.
         res.redirect("./")
     })
     

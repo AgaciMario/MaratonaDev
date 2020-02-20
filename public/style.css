@@ -9,7 +9,7 @@ html, body {
 }
 
 h1, h2 {
-    color: #000000cc
+    color: #000000cc;
 }
 
 body {
@@ -18,7 +18,7 @@ body {
 
     height: 100vh;
     /*vh -> view port height;
-     view port: tudo que é visto no browser.*/
+     view port: tudo que é visto na janela do browser.*/
 
      /* fonte */
      font-family: 'Roboto', sans-serif;
@@ -49,13 +49,13 @@ header, main, footer{
 }
 
 header, .form, main {
-    /* espaçametos com margin */
+    /* espaçamentos com margin */
     margin: 0px auto 70px auto;
 
-    /* limites dos elementos na pagina */
+    /* limites dos elementos na página */
     width: 90%;
     max-width: 500px;
-    /* Coloca/remove margin automaticamente conforme
+    /* auto coloca/remove margin automaticamente conforme
      o documento aumenta/diminui de tamanho*/
 }
 
@@ -128,7 +128,7 @@ form button {
 main .donors {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    /*fr = flexivel acupar espaço automaticamente*/
+    /*fr = flexível ocupar espaço automaticamente*/
 }
 
 .blood {
