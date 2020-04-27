@@ -1,14 +1,14 @@
-// importando o express para o projeto.
+// Importando o express para o projeto.
 const express = require("express")
 const server = express()
 
-// configurando o servidor para apresentar arquivos estáticos.
+// Configurando o servidor para apresentar arquivos estáticos.
 server.use(express.static('public'))
 
-// habilitando o body do formulário.
+// Habilitando o body do formulário.
 server.use(express.urlencoded( { extended: true } ))
 
-//configurar a conecção com o banco de dados.
+// Configurar a conecção com o banco de dados.
 const Pool = require("pg").Pool
 const bd = new Pool({
     user: 'postgres',
@@ -18,16 +18,16 @@ const bd = new Pool({
     database: 'Doe',
 })
 
-// configurando a template engine.
+// Configurando a template engine.
 const nunjucks = require("nunjucks");
-nunjucks.configure("./", { // ./ indica que utilizaremos a pasta padrão do projeto.
-    express: server, // indicando qual variável guarda o express.
+nunjucks.configure("./", { // "./" Indica que utilizaremos a pasta padrão do projeto.
+    express: server, // Indicando qual variável guarda o express.
     noCache: true,
 })
 
-// configurar a apresentação da página.
+// Configurar a apresentação da página.
 server.get("/", function(req, res){
-    // req -> requisição, res -> resposta.as
+    // req -> requisição, res -> resposta
     bd.query("SELECT * FROM donors", function(err, result){
         if(err) return res.send(err.message)
 
@@ -38,7 +38,7 @@ server.get("/", function(req, res){
 })
 
 server.post("/", function(req, res) {
-    // pega os dados do formulário.
+    // Pega os dados do formulário.
     const name = req.body.name
     const email = req.body.email
     const blood = req.body.blood
@@ -47,7 +47,7 @@ server.post("/", function(req, res) {
         return res.send("Todos os campos são obrigatórios.")
     }
 
-    // inserindo valores no banco de dados.
+    // Inserindo valores no banco de dados.
     const query = `
         INSERT INTO donors ("name", "email", "blood")
         VALUES ($1, $2, $3)`
@@ -57,13 +57,13 @@ server.post("/", function(req, res) {
     bd.query(query, values, function(err) {
         if(err) return res.send("Não foi possível realizar a operação. "+err.message)
 
-        // redireciona para a página inicial.
+        // Redireciona para a página inicial.
         res.redirect("./")
     })
     
 })
 
-// ligar o servidor e permitir o acesso na porta 3000.
+// Ligar o servidor e permitir o acesso na porta 3000.
 server.listen(3000, function() {
     console.log("servidor iniciado.")
 })

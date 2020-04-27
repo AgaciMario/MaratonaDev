@@ -27,7 +27,7 @@ body {
      background-color: #f9f9f9;
 }
 
-/* TITULOS */
+/* TÍTULOS */
 header h1, main h2 {
     margin-bottom: 70px;
 }
@@ -51,12 +51,14 @@ header, main, footer{
 header, .form, main {
     /* espaçamentos com margin */
     margin: 0px auto 70px auto;
+    /* auto: Coloca ou remove a margin automaticamente conforme
+     * o documento aumenta ou diminui de tamanho.
+     */
+
 
     /* limites dos elementos na página */
     width: 90%;
     max-width: 500px;
-    /* auto coloca/remove margin automaticamente conforme
-     o documento aumenta/diminui de tamanho*/
 }
 
 /* HEADER */
