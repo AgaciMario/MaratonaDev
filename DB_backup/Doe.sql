@@ -74,24 +74,6 @@ ALTER TABLE ONLY public.donors ALTER COLUMN id SET DEFAULT nextval('public.donor
 
 
 --
--- Data for Name: donors; Type: TABLE DATA; Schema: public; Owner: -
---
-
-COPY public.donors (id, name, email, blood) FROM stdin;
-1	Diego Fernandes	diego@rockeseat.com.br	AB+
-2	Robson Marques	robson@rocketseat.com.br	A+
-3	Agaci Mário	agacimnm@gmail.com	B+
-\.
-
-
---
--- Name: donors_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
---
-
-SELECT pg_catalog.setval('public.donors_id_seq', 5, true);
-
-
---
 -- Name: donors donors_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -102,3 +84,4 @@ ALTER TABLE ONLY public.donors
 --
 -- PostgreSQL database dump complete
 --
+
