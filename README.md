@@ -32,11 +32,11 @@ Quando estiver conectado ao servidor, no postbird vá em file > "import .sql fil
 clique em "import file".
 
 ## Instalando dependências e inciando o servidor
-Acesse a pasta do projeto pelo seu terminal e rode o comando abaixo:
+Acesse a pasta do projeto pelo seu terminal digite o comando abaixo:
 ```
 npm install
 ```
-quando o processo de instalação acabar rode o comando: 
+quando o processo de instalação acabar digite o comando: 
 ```
 npm start
 ```
